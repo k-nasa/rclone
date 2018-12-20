@@ -49,3 +49,9 @@ fn fetch_repo(repo_url: &str, dir_path: &str) -> Result<(), Error> {
 
     Ok(())
 }
+
+fn create_repos_dir(dir_path: &str) -> Result<(), Error> {
+    DirBuilder::new().recursive(true).create(dir_path)?;
+
+    Ok(())
+}
