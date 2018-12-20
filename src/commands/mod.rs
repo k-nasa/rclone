@@ -3,12 +3,13 @@ mod cmd_clone;
 mod cmd_config;
 
 use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, SubCommand};
+use colored::*;
 
 pub fn run() {
     let matches = build_app().get_matches();
 
     if let Some(_) = matches.value_of("repo") {
-        cmd_clone::run(&matches);
+        cmd_clone::run(&matches).unwrap_or_else(|e| println!("{}", e.to_string().red().bold()));
         return;
     }
 
