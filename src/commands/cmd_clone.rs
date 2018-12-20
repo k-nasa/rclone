@@ -37,3 +37,15 @@ fn make_repository_url(repo: &str) -> Result<String, Error> {
 
     Err(Error::from(InvalidRepoError))
 }
+
+fn fetch_repo(repo_url: &str, dir_path: &str) -> Result<(), Error> {
+    let mut clone_process = Command::new("git")
+        .current_dir(dir_path)
+        .arg("clone")
+        .arg(repo_url)
+        .spawn()?;
+
+    clone_process.wait()?;
+
+    Ok(())
+}
