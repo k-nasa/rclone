@@ -8,7 +8,7 @@ use colored::*;
 pub fn run() {
     let matches = build_app().get_matches();
 
-    if let Some(_) = matches.value_of("repo") {
+    if matches.value_of("repo").is_some() {
         cmd_clone::run(&matches).unwrap_or_else(|e| println!("{}", e.to_string().red().bold()));
         return;
     }
