@@ -9,3 +9,4 @@ readme="README.md"
 description='Tools for git clone'
 
 [dependencies]
+clap = "2.32.0"
