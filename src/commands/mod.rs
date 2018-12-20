@@ -1,6 +1,4 @@
-mod cmd_cd;
 mod cmd_clone;
-mod cmd_config;
 
 use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, SubCommand};
 use colored::*;
@@ -13,11 +11,7 @@ pub fn run() {
         return;
     }
 
-    match matches.subcommand() {
-        ("cd", Some(_)) => cmd_cd::run(),
-        ("config", Some(_)) => cmd_config::run(),
-        _ => build_app().print_help().expect("faild print help"),
-    }
+    build_app().print_help().expect("faild print help");
 }
 
 fn build_app() -> App<'static, 'static> {
