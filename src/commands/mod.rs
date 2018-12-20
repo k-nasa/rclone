@@ -25,7 +25,6 @@ fn build_app() -> App<'static, 'static> {
         .author(crate_authors!())
         .about(crate_description!())
         .arg(Arg::with_name("repo").help("git repository name"))
-        .arg(Arg::with_name("ssh").short("s").long("ssh").help("use ssh"))
         .subcommand(SubCommand::with_name("cd").about("go to clone directory"))
         .subcommand(SubCommand::with_name("config").about("open config file"))
 }
