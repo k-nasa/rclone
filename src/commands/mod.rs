@@ -1,6 +1,6 @@
 mod cmd_clone;
 
-use clap::{crate_authors, crate_description, crate_name, crate_version, App, Arg, SubCommand};
+use clap::{crate_description, crate_name, crate_version, App, AppSettings, Arg};
 use colored::*;
 
 pub fn run() {
@@ -17,9 +17,8 @@ pub fn run() {
 fn build_app() -> App<'static, 'static> {
     App::new(crate_name!())
         .version(crate_version!())
-        .author(crate_authors!())
         .about(crate_description!())
+        .setting(AppSettings::DeriveDisplayOrder)
+        .setting(AppSettings::ColoredHelp)
         .arg(Arg::with_name("repo").help("git repository name"))
-        .subcommand(SubCommand::with_name("cd").about("go to clone directory"))
-        .subcommand(SubCommand::with_name("config").about("open config file"))
 }
