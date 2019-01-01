@@ -1,8 +1,6 @@
 mod cmd_clone;
 
-use clap::{
-    crate_authors, crate_description, crate_name, crate_version, App, AppSettings, Arg, SubCommand,
-};
+use clap::{crate_description, crate_name, crate_version, App, AppSettings, Arg};
 use colored::*;
 
 pub fn run() {
