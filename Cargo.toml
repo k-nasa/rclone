@@ -1,5 +1,5 @@
 [package]
-name = "clone"
+name = "rclone"
 version = "0.1.1"
 authors = ["k-nasa <htilcs1115@gmail.com>"]
 repository = "https://github.com/k-nasa/rclone"
